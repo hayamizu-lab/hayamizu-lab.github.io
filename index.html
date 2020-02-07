@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ryohei Suzuki">
   
-  <title>treefit - Measuring the tree-likeness of single-cell RNA-seq data</title>
+  <title>Treefit - Measuring the tree-likeness of single-cell RNA-seq data</title>
   
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -39,7 +39,7 @@
     <section class="jumbotron text-center">
       <div class="container">
         <h1>Treefit</h1>
-        <h3>Measuring the tree-likeness of single-cell RNA-seq data hogehogehoge</h3>
+        <h3>Measuring the tree-likeness of single-cell RNA-seq data and </h3>
       </div>
     </section>
     <!-- アブストラクト部分 -->
@@ -48,19 +48,21 @@
         <div class="abstract-figure-container">
           <img src="img/abstract-left.png" class="abstract-figure">
         </div>
-        <h3>quantify the fitness to a tree</h3>
+        <h3>Quantifying the goodness-of-fit between data and tree models</h3>
         <p>
-          Inference of tree-like underlying structures of experimental data (<i>i.e.</i> trajectory inference) is an essential part of many single-cell RNA-seq applications, but it sometimes suffers from the uncertainty due to the high-level of noise or the diffusive characteristics of the target cells.
-          <i>treefit</i> is a library to examine the reliability of inferred tree trajectories.
+          Trajectory inference is one of the key computational challenges in single-cell transcriptomics. In the last few years, many software packages have been developed and widely used to estimate and visualize the underlying tree structure (<i>i.e.</i>, cellular hierarchy) from single-cell RNA-seq data. 
+          However, trajectory inference often suffers from the uncertainty due to the heterogeneity of individual cells and the high levels of technical noise in single-cell experiments. Therefore, in order to facilitate scientific discoveries, it is crucial to establish a theoretically sound quantitative method that is underpinned by a mathematical/statistical evidence base. 
+          <b>Treefit</b> is a library to examine the reliability of inferred trajectories based on the robustness of the tree structures.
         </p>
       </div>
       <div class="col-md-5 text-center">
         <div class="abstract-figure-container">
           <img src="img/abstract-right.png" class="abstract-figure">
         </div>
-        <h3>analyze the complexity of data</h3>
+        <h3>Detecting the number of principal cell linages in your dataset</h3>
         <p>
-          Estimation of the data topology (<i>e.g.</i> linear maturation, bifurcation, or more complex divergence) is an important part of trajectory analysis. <i>treefit</i> provides information of the intrinsic complexity of the data geometry with help of the techniques of manifold analysis.
+          <i>Treefit</i> provides information of the intrinsic complexity of the data geometry with help of the techniques of manifold analysis.
+          <b>Treefit</b> gives insight into the "shape" of your data (<i>e.g.</i> linear maturation, bifurcation, or more complex divergence) with help of geometric techniques and therefore helps you recognize different types of cells or discover a novel cell type.
         </p>
       </div>
     </section>
