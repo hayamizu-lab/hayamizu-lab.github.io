@@ -1,0 +1,118 @@
+header {
+  .link-github {
+    img {
+      height: 32px;
+    }
+  }
+  strong {
+    font-size: 1.5rem;
+  }
+}
+footer {
+  padding: 2rem 0;
+}
+
+main {
+  .jumbotron {
+    h1 {
+      margin-bottom: 1.0rem;
+      font-weight: 400;
+      font-size: 2.8rem;
+    }
+    h3 {
+      font-weight: 200;
+    }
+  }
+}
+
+#section-abstract {
+  padding: 10px 10px;
+  h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+  .abstract-figure {
+    width: 400px;
+    display: inline-block;
+  }
+}
+
+#section-getting-started {
+  padding: 25px 10px 10px;
+  background: #f0f0f0;
+  border-top: solid 1px lightgrey;
+
+  h3 {
+    margin: 10px 0 10px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: block;
+  }
+  .step {
+    margin: 0 0 20px 10px;
+    .code-sample {
+      margin-left: 0px;
+      vertical-align: top;
+      td {
+        vertical-align: top;
+      }
+      pre {
+        color: #fff;
+        background-color: #212529;
+        padding: .1rem .4rem .15rem;
+        border-radius: .2rem;
+        margin: 0 0 5px;
+      }
+      .lang-icon {
+        display: inline-block;
+        margin-right: 5px;
+        width: 50px;
+        text-align: center;
+        border-radius: 3px;
+        font-weight: 500;
+        font-size: 14px;
+      }
+      .lang-icon-red {
+        background-color: #990000;
+        color: white;
+      }
+      .lang-icon-green {
+        background-color: #009900;
+        color: white;
+      }
+    }
+    p {
+      margin-bottom: 0;
+      color: #333;
+    }
+    ul {
+      margin: 5px 0;
+    }
+    img {
+      margin-top: 15px;
+    }
+  }
+}
+#section-theory {
+  padding: 25px 10px 10px;
+  border-top: solid 1px lightgrey;
+  h3 {
+    margin: 10px 0 10px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: block;
+  }
+  .step {
+    margin: 0 0 20px 10px;
+    p {
+      margin-bottom: 0;
+      color: #333;
+    }
+    img {
+      margin: 15px auto;
+    }
+  }
+}
