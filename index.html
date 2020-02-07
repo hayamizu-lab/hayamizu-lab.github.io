@@ -64,6 +64,37 @@
         </p>
       </div>
     </section>
+    <!-- 理論紹介部分 -->
+    <section id="section-theory" class='bg-light'>
+      <div class="text-center">
+        <h2>Geometrical stability</h2>
+        <p><i>treefit</i> tests the fitting of the data to a tree topology exploiting the uncertainty of data.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="step">
+            <h3>Applying perturbation</h3>
+            <p><i>treefit</i> repeatedly perturbs the given data to generate many possible realizations of gene expression matrix.</p>
+            <p>It uses the statistical uncertainty of the raw counts as well as an interpolating techniques for the perturbation.</p>
+            <p class="text-center"><img src="img/theory-perturbation.png" width=500></p>
+          </div>
+          <div class="step">
+            <h3>Comparing the global structures of trees</h3>
+            <p><i>treefit</i> calculates the fitted tree (currently supporting MST) for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods.
+            The structure is stable when a data has an intrinsic tree-like topology, while it becomes unstable for not tree-like data (e.g., cycle, diffusive).</p>
+            <p class="text-center"><img src="img/theory-msts.png" width=550></p>
+            <p><i>comparison of stable/unstable MSTs generated from tree-like/not tree-like data (only longest paths are shown):</i></p>
+            <p class="text-center"><img src="img/theory-comparison.png" width=700></p>
+          </div>
+          <div class="step">
+            <h3>Grassmann manifolds of Laplacian eigenseries</h3>
+            <p>As the measure of the similarity of global structures between trees, <i>treefit</i> calculates the eigenseries of the graph Laplacian for each tree, and then computes the distance between the spaces spanned by the leading eigenvectors, which represents the low-frequency components of the graph topology.</p>
+            <p>Several distance measures with different definitions provides diverse information about the topology of the data.</p>
+            <p class="text-center"><img src="img/theory-grassmann.png" width=800></p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- チュートリアル部分 -->
     <section id="section-getting-started">
       <div class="text-center">
@@ -134,37 +165,6 @@ ggplot(data = treefit_result) + geom_line(mapping = aes(x=k, y=max))
               <img src="img/getstart-result-sample.png" width=400>
             </p>
             <p>See <a href="#">tutorial</a> for the detailed usage and the interpretation of the result.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- 理論紹介部分 -->
-    <section id="section-theory" class='bg-light'>
-      <div class="text-center">
-        <h2>Geometrical stability</h2>
-        <p><i>treefit</i> tests the fitting of the data to a tree topology exploiting the uncertainty of data.</p>
-      </div>
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <div class="step">
-            <h3>Applying perturbation</h3>
-            <p><i>treefit</i> repeatedly perturbs the given data to generate many possible realizations of gene expression matrix.</p>
-            <p>It uses the statistical uncertainty of the raw counts as well as an interpolating techniques for the perturbation.</p>
-            <p class="text-center"><img src="img/theory-perturbation.png" width=500></p>
-          </div>
-          <div class="step">
-            <h3>Comparing the global structures of trees</h3>
-            <p><i>treefit</i> calculates the fitted tree (currently supporting MST) for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods.
-            The structure is stable when a data has an intrinsic tree-like topology, while it becomes unstable for not tree-like data (e.g., cycle, diffusive).</p>
-            <p class="text-center"><img src="img/theory-msts.png" width=550></p>
-            <p><i>comparison of stable/unstable MSTs generated from tree-like/not tree-like data (only longest paths are shown):</i></p>
-            <p class="text-center"><img src="img/theory-comparison.png" width=700></p>
-          </div>
-          <div class="step">
-            <h3>Grassmann manifolds of Laplacian eigenseries</h3>
-            <p>As the measure of the similarity of global structures between trees, <i>treefit</i> calculates the eigenseries of the graph Laplacian for each tree, and then computes the distance between the spaces spanned by the leading eigenvectors, which represents the low-frequency components of the graph topology.</p>
-            <p>Several distance measures with different definitions provides diverse information about the topology of the data.</p>
-            <p class="text-center"><img src="img/theory-grassmann.png" width=800></p>
           </div>
         </div>
       </div>
