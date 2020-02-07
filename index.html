@@ -61,7 +61,7 @@
         </div>
         <h3>Detecting the number of principal cell linages in your dataset</h3>
         <p>
-          <i>Treefit</i> provides information of the intrinsic complexity of the data geometry with help of the techniques of manifold analysis.
+          <b>Treefit</b> provides information of the intrinsic complexity of the data geometry with help of the techniques of manifold analysis.
           <b>Treefit</b> gives insight into the "shape" of your data (<i>e.g.</i> linear maturation, bifurcation, or more complex divergence) with help of geometric techniques and therefore helps you recognize different types of cells or discover a novel cell type.
         </p>
       </div>
@@ -69,20 +69,20 @@
     <!-- 理論紹介部分 -->
     <section id="section-theory" class='bg-light'>
       <div class="text-center">
-        <h2>Geometrical stability</h2>
-        <p><i>treefit</i> tests the fitting of the data to a tree topology exploiting the uncertainty of data.</p>
+        <h2>Theory of Treefit</h2>
+        <p><b>Treefit</b> tests the fitting of the data to a tree topology exploiting the uncertainty of data.</p>
       </div>
       <div class="row">
         <div class="col-md-8 offset-md-2">
           <div class="step">
             <h3>Applying perturbation</h3>
-            <p><i>treefit</i> repeatedly perturbs the given data to generate many possible realizations of gene expression matrix.</p>
+            <p><b>Treefit</b> repeatedly perturbs the given data to generate many possible realizations of gene expression matrix.</p>
             <p>It uses the statistical uncertainty of the raw counts as well as an interpolating techniques for the perturbation.</p>
             <p class="text-center"><img src="img/theory-perturbation.png" width=500></p>
           </div>
           <div class="step">
             <h3>Comparing the global structures of trees</h3>
-            <p><i>treefit</i> calculates the fitted tree (currently supporting MST) for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods.
+            <p><b>Treefit</b> calculates the fitted tree (currently supporting MST) for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods.
             The structure is stable when a data has an intrinsic tree-like topology, while it becomes unstable for not tree-like data (e.g., cycle, diffusive).</p>
             <p class="text-center"><img src="img/theory-msts.png" width=550></p>
             <p><i>comparison of stable/unstable MSTs generated from tree-like/not tree-like data (only longest paths are shown):</i></p>
