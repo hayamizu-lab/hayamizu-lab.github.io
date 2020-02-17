@@ -1,0 +1,31 @@
+title: Hayamizu lab
+description: "Hayamizu lab: Treefit"
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - "Rakefile"
+  - "Gemfile"
+  - "Gemfile.lock"
+
+kramdown:
+  input: GFM
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+sass:
+  sass_dir: assets/stylesheets
+
+defaults:
+  - scope:
+      path: "ja"
+    values:
+      path_prefix: /ja/
+      layout: "base"
+      language: ja
+      country: JP
+  - scope:
+      path: ""
+    values:
+      path_prefix: /
+      layout: "base"
+      language: en
+      country: US
