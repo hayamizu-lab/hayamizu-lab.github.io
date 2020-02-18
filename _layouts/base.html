@@ -35,18 +35,42 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-dark bg-dark shadow-sm" role="navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm"
+           role="navigation">
         <div class="container d-flex justify-content-between">
           <a href="/treefit/" class="navbar-brand d-flex align-items-center">
             <strong>Treefit</strong>
           </a>
+          <button class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbar-content"
+                  aria-controls="navbar-content"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse"
+               id="navbar-content">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/treefit/r/">For R</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/treefit/python/">For Python</a>
+              </li>
+            </ul>
+          </div>
+          {% if page.github_repository %}
           <span>
-            <a href="https://github.com/hayamizu-lab/treefit-r"
+            <a href="https://github.com/{{ page.github_repository }}"
                class="link-github">
               <img src="/assets/images/GitHub-Mark-Light-64px.png"
                    alt="GitHub repository">
             </a>
           </span>
+          {% endif %}
         </div>
       </nav>
     </header>

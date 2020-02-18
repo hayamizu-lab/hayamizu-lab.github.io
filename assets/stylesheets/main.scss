@@ -23,6 +23,12 @@ header {
   }
 }
 
+main {
+  .markdown {
+    padding-top: 20px;
+  }
+}
+
 footer {
   padding: 2rem 0;
 }
@@ -65,9 +71,6 @@ footer {
   h3 {
     margin-top: 15px;
     font-size: 1.5rem;
-  }
-  p {
-    font-size: 0.95rem;
   }
 }
 

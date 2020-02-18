@@ -21,13 +21,13 @@ defaults:
       path: "ja"
     values:
       path_prefix: /ja/
-      layout: "base"
+      layout: "markdown"
       language: ja
       country: JP
   - scope:
       path: ""
     values:
       path_prefix: /
-      layout: "base"
+      layout: "markdown"
       language: en
       country: US
