@@ -3,9 +3,10 @@ description: "Hayamizu lab: Treefit"
 markdown: kramdown
 highlighter: rouge
 exclude:
-  - "Rakefile"
+  - ".dir-locals.el"
   - "Gemfile"
   - "Gemfile.lock"
+  - "Rakefile"
   - "vendor"
 
 kramdown:
