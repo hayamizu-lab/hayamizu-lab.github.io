@@ -15,37 +15,43 @@ description: Treefit - Quantitative analysis software for trajectory inference
     </div>
   </div>
 
-  <div class="col-md-8 offset-md-2 col-auto text-center">
-    <p>
-      <b>Treefit</b> is a novel data analysis toolkit that helps you perform two types of analysis: 1) checking the goodness-of-fit of tree models to your single-cell gene expression data; and 2) deciding which tree best fits your data. <b>Treefit</b> is implemented in both R and Python languages and can be used in conjunction with other  popular software packages, such as Monocle, Seurat, and Dynverse.
-    </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 text-center">
+        <p>
+          <b>Treefit</b> is a novel data analysis toolkit that helps you perform two types of analysis: 1) checking the goodness-of-fit of tree models to your single-cell gene expression data; and 2) deciding which tree best fits your data. <b>Treefit</b> is implemented in both R and Python languages and can be used in conjunction with other  popular software packages, such as Monocle, Seurat, and Dynverse.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="section-abstract" class="container">
-  <div class="row">
-    <div class="col-md-5 offset-md-1 col-auto text-center">
-      <h3>1) Ensuring the goodness-of-fit between data and tree models</h3>
-      <p>
-        Trajectory inference is one of the key computational challenges in single-cell transcriptomics. In the last few years, many software packages have been developed and widely used to estimate and visualize the underlying tree structure (<i>i.e.</i>, cellular hierarchy) from single-cell RNA-seq data.
-      </p>
-      <p>
-        However, trajectory inference often suffers from the uncertainty due to the heterogeneity of individual cells and the high levels of technical noise in single-cell experiments. Therefore, in order to facilitate scientific discoveries, it is crucial to establish a theoretically sound quantitative method that is underpinned by a mathematical/statistical evidence base.
-      </p>
-      <p>
-        <b>Treefit</b> is a library to examine the reliability of inferred trajectories based on the robustness of the tree structures.
-      </p>
-      <div class="abstract-figure-container">
-        <img src="/assets/images/abstract-left.png" class="abstract-figure">
+<section id="section-abstract">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 offset-md-1 text-center">
+        <h3>1) Ensuring the goodness-of-fit between data and tree models</h3>
+        <p>
+          Trajectory inference is one of the key computational challenges in single-cell transcriptomics. In the last few years, many software packages have been developed and widely used to estimate and visualize the underlying tree structure (<i>i.e.</i>, cellular hierarchy) from single-cell RNA-seq data.
+        </p>
+        <p>
+          However, trajectory inference often suffers from the uncertainty due to the heterogeneity of individual cells and the high levels of technical noise in single-cell experiments. Therefore, in order to facilitate scientific discoveries, it is crucial to establish a theoretically sound quantitative method that is underpinned by a mathematical/statistical evidence base.
+        </p>
+        <p>
+          <b>Treefit</b> is a library to examine the reliability of inferred trajectories based on the robustness of the tree structures.
+        </p>
+        <div class="abstract-figure-container">
+          <img src="/assets/images/abstract-left.png" class="abstract-figure">
+        </div>
       </div>
-    </div>
-    <div class="col-md-5 col-auto text-center">
-      <h3>2) Estimating the number of principal cell linages in your dataset</h3>
-      <p>
-        Single-cell technologies are expected to help us discover a novel type of cells and revolutionalize our understanding of the process of cell differentiation; however, it is not always easy to distinguish distinct types of cells or to quantify how different their gene expression profiles are. Although visualization is essential in any exploratory data analysis, different methods can result in completely different pictures, making it hard to directly reach a scientific truth solely by this approach. With help of powerful techniques in various disciplines of mathematics, <b>Treefit</b> gives insight into the "shape" of your data (<i>e.g.</i> linear maturation, bifurcation, or more complex divergence) and helps accelerate scientific discoveries in a mathematically and statistically valid way.  
-      </p>
-      <div class="abstract-figure-container">
-        <img src="/assets/images/abstract-right.png" class="abstract-figure">
+      <div class="col-md-5 text-center">
+        <h3>2) Estimating the number of principal cell linages in your dataset</h3>
+        <p>
+          Single-cell technologies are expected to help us discover a novel type of cells and revolutionalize our understanding of the process of cell differentiation; however, it is not always easy to distinguish distinct types of cells or to quantify how different their gene expression profiles are. Although visualization is essential in any exploratory data analysis, different methods can result in completely different pictures, making it hard to directly reach a scientific truth solely by this approach. With help of powerful techniques in various disciplines of mathematics, <b>Treefit</b> gives insight into the "shape" of your data (<i>e.g.</i> linear maturation, bifurcation, or more complex divergence) and helps accelerate scientific discoveries in a mathematically and statistically valid way.  
+        </p>
+        <div class="abstract-figure-container">
+          <img src="/assets/images/abstract-right.png" class="abstract-figure">
+        </div>
       </div>
     </div>
   </div>
@@ -53,35 +59,27 @@ description: Treefit - Quantitative analysis software for trajectory inference
 
 <section id="section-theory" class="bg-light">
   <div class="container">
-    <div class="text-center">
-      <div class="col-md-8 offset-md-2">
-        <h2>Theoretical ideas</h2>
-        <p>One of the fundamental assumptions in biology is that cell differentiation can be modeled by a tree (<i>i.e.</i>, connected graph without a cycle).  <b>Treefit</b> verifies how well your data can be explained by a tree the fitting of the data to a tree topology exploiting the uncertainty of data.</p>
-      </div>
+    <h2>Theoretical ideas</h2>
+    <p>One of the fundamental assumptions in biology is that cell differentiation can be modeled by a tree (<i>i.e.</i>, connected graph without a cycle).  <b>Treefit</b> verifies how well your data can be explained by a tree the fitting of the data to a tree topology exploiting the uncertainty of data.</p>
+    <div class="step">
+      <h3>1. Applying perturbation</h3>
+      <p><b>Treefit</b> repeatedly perturbs the given data to generate many possible realizations of gene expression matrix.</p>
+      <p>It uses the statistical uncertainty of the raw counts as well as an interpolating techniques for the perturbation.</p>
+      <p class="text-center"><img src="/assets/images/theory-perturbation.png"></p>
     </div>
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <div class="step">
-          <h3>1. Applying perturbation</h3>
-          <p><b>Treefit</b> repeatedly perturbs the given data to generate many possible realizations of gene expression matrix.</p>
-          <p>It uses the statistical uncertainty of the raw counts as well as an interpolating techniques for the perturbation.</p>
-          <p class="text-center"><img src="/assets/images/theory-perturbation.png"></p>
-        </div>
-        <div class="step">
-          <h3>2. Comparing the global structures of trees</h3>
-          <p><b>Treefit</b> calculates the fitted tree (currently supporting MST) for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods.</p>
-          <p>The structure is stable when a data has an intrinsic tree-like topology, while it becomes unstable for not tree-like data (<i>e.g.</i>, cycle, diffusive).</p>
-          <p class="text-center"><img src="/assets/images/theory-msts.png"></p>
-          <p><i>comparison of stable/unstable MSTs generated from tree-like/not tree-like data (only longest paths are shown):</i></p>
-          <p class="text-center"><img src="/assets/images/theory-comparison.png"></p>
-        </div>
-        <div class="step">
-          <h3>3. Grassmann manifolds of Laplacian eigenseries</h3>
-          <p>As the measure of the similarity of global structures between trees, <b>Treefit</b> calculates the eigenseries of the graph Laplacian for each tree, and then computes the distance between the spaces spanned by the leading eigenvectors, which represents the low-frequency components of the graph topology.</p>
-          <p>Several distance measures with different definitions provides diverse information about the topology of the data.</p>
-          <p class="text-center"><img src="/assets/images/theory-grassmann.png"></p>
-        </div>
-      </div>
+    <div class="step">
+      <h3>2. Comparing the global structures of trees</h3>
+      <p><b>Treefit</b> calculates the fitted tree (currently supporting MST) for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods.</p>
+      <p>The structure is stable when a data has an intrinsic tree-like topology, while it becomes unstable for not tree-like data (<i>e.g.</i>, cycle, diffusive).</p>
+      <p class="text-center"><img src="/assets/images/theory-msts.png"></p>
+      <p><i>comparison of stable/unstable MSTs generated from tree-like/not tree-like data (only longest paths are shown):</i></p>
+      <p class="text-center"><img src="/assets/images/theory-comparison.png"></p>
+    </div>
+    <div class="step">
+      <h3>3. Grassmann manifolds of Laplacian eigenseries</h3>
+      <p>As the measure of the similarity of global structures between trees, <b>Treefit</b> calculates the eigenseries of the graph Laplacian for each tree, and then computes the distance between the spaces spanned by the leading eigenvectors, which represents the low-frequency components of the graph topology.</p>
+      <p>Several distance measures with different definitions provides diverse information about the topology of the data.</p>
+      <p class="text-center"><img src="/assets/images/theory-grassmann.png"></p>
     </div>
   </div>
 </section>
@@ -93,10 +91,10 @@ description: Treefit - Quantitative analysis software for trajectory inference
       <p>There are <b>Treefit</b> for R and <b>Treefit</b> for Python.</p>
     </div>
     <div class="row">
-      <div class="col-md-5 offset-md-1">
+      <div class="col-md-6">
         <p class="text-center"><a href="r/"><b>Treefit</b> for R</a></p>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-6">
         <p class="text-center"><a href="python/"><b>Treefit</b> for Python</a></p>
       </div>
     </div>
