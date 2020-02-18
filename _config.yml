@@ -6,6 +6,7 @@ exclude:
   - "Rakefile"
   - "Gemfile"
   - "Gemfile.lock"
+  - "vendor"
 
 kramdown:
   input: GFM
