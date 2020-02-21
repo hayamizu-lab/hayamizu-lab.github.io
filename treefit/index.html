@@ -63,13 +63,13 @@ layout: base
     <h2>Theoretical ideas</h2>
     <p>One of the fundamental beliefs in biology is that the process of cell differentiation can be modeled by a "tree" (<i>i.e.</i>, connected graph without a cycle). However, it depends on the situation whether or not this assumption is valid. Indeed, some data are too noisy to be exactly depicted by a tree and some cells are known to undergo dedifferentiation that is not a tree-like but cycle-like process. <b>Treefit</b> verifies how well your data can be explained by a tree model and thus helps you perform quantitative trajectory inference.</p>
     <div class="step">
-      <h3>1. Applying perturbation</h3>
+      <h3>1. Data perturbation</h3>
       <p>In mathematics, perturbation refers to the operation of adding a slight shift to a number, and in our context, it means adding small noise to the values of original gene expression signals. If you input a gene expression data matrix, then <b>Treefit</b> repeatedly perturbs the original data so that you can obtain many possible datasets without actually doing the same experiments over and over again.  
       <p><b>Treefit</b> currently supports two types of perturbation, one of which uses the statistical uncertainty of the raw counts while the other employs an interpolating techniques that can also be applied to processed data.</p>
       <p class="text-center"><img src="/assets/images/theory-perturbation.png"></p>
     </div>
     <div class="step">
-      <h3>2. Comparing the global structures of trees</h3>
+      <h3>2. Robustness of the tree structures</h3>
       <p><b>Treefit</b> calculates the fitted tree (currently supporting MST) for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods.</p>
       <p>The structure is stable when a data has an intrinsic tree-like topology, while it becomes unstable for not tree-like data (<i>e.g.</i>, cycle, diffusive).</p>
       <p class="text-center"><img src="/assets/images/theory-msts.png"></p>
