@@ -98,10 +98,16 @@ footer {
       margin-bottom: 0;
       color: #333;
       img {
-        max-width: 90%;
+        max-width: 50%;
         display: inline-block;
         margin-top: 10px;
         margin-bottom: 10px;
+      }
+
+      @media screen and (max-width: $mobile_max_width) {
+        img {
+          max-width: 90%;
+        }
       }
     }
   }
