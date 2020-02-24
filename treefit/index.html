@@ -48,7 +48,7 @@ layout: base
       <div class="col-md-5">
         <h3>2) Estimating the number of "principal paths" in the best-fit tree trajectory</h3>
         <p>
-          Single-cell technologies are expected to help us discover a novel type of cells and revolutionalize our understanding of the process of cell differentiation; however, it is not always easy to distinguish distinct types of cells or to quantify how different their gene expression profiles are. Although visualization is essential in any exploratory data analysis, different methods can result in completely different pictures, making it hard to directly reach a scientific truth solely by this approach.
+          Single-cell technologies are expected to help us discover a novel type of cells and revolutionize our understanding of the process of cell differentiation; however, it is not always easy to distinguish distinct types of cells or to quantify how different their gene expression profiles are. Although visualization is essential in any exploratory data analysis, different methods can result in completely different pictures, making it hard to directly reach a scientific truth solely by this approach.
         </p>
         <p>
           With help of powerful techniques in various disciplines of mathematics, <b>Treefit</b> gives insight into the "shape" of your data (<i>e.g.</i> linear maturation, bifurcation, or more complex divergence) and helps accelerate scientific discoveries in a mathematically and statistically valid way.
@@ -66,23 +66,24 @@ layout: base
     <h2>Theoretical ideas</h2>
     <p>One of the fundamental beliefs in cell biology is that the process of cell differentiation can be modeled by a "tree" (<i>i.e.</i>, connected graph without a cycle). However, it depends on the situation whether or not this assumption is valid. Indeed, some data are too noisy to be exactly depicted by a tree and some cells are known to undergo dedifferentiation that is not a tree-like but cycle-like process. <b>Treefit</b> verifies how well your data can be explained by a tree model and thus helps you perform quantitative trajectory inference.</p>
     <div class="step">
-      <h3>1. Data perturbation</h3>
-      <p>In mathematics, perturbation refers to the operation of adding a slight shift to a number, and in our context, it means adding small noise to the values of original gene expression signals. If you input a gene expression data matrix, then <b>Treefit</b> repeatedly perturbs the original data so that you can obtain many possible datasets without actually doing the same experiments over and over again.  
+      <h3>1. Adding small noises to original data</h3>
+      <p>In mathematics, perturbation refers to the operation of adding a slight shift to a number. In our context, it means adding small noises to the values of original gene expression data. If you input a gene expression data matrix, then <b>Treefit</b> repeatedly perturbs the data so that you can obtain many possible datasets without actually conducting the same single-cell experiments over and over again.  
       <p><b>Treefit</b> currently supports two types of perturbation, one of which uses the statistical uncertainty of the raw counts while the other employs an interpolating techniques that can also be applied to processed data.</p>
       <p class="text-center"><img src="/assets/images/theory-perturbation.png"></p>
     </div>
     <div class="step">
-      <h3>2. Robustness of the tree structures</h3>
-      <p>Once creating many similar datasets by simulating different kinds of noise, we can construct many possible trees by applying any tree trajectory inference method to each gene expression data matrix. <b>Treefit</b> calculates the fitted tree (currently supporting MST) for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods.</p>
-      <p>The structure is stable when a data has an intrinsic tree-like topology, while it becomes unstable for not tree-like data (<i>e.g.</i>, cycle, diffusive).</p>
+      <h3>2. Measuring the robustness of inferred tree trajectories</h3>
+      <p>Once creating many datasets by simulating different kinds of noise, we can build many possible trees by applying any tree trajectory inference method to each gene expression data matrix. <b>Treefit</b> calculates a tree (currently supporting MST) for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods.</p>
       <p class="text-center"><img src="/assets/images/theory-msts.png"></p>
-      <p><i>comparison of stable/unstable MSTs generated from tree-like/not tree-like data (only longest paths are shown):</i></p>
+      <p>Treefit</b> analyzes the goodness-of-fit between data and data-derived tree models by measuring the structural similarity between many inferred tree trajectories.</p>
+      <p>The structure is stable when data have an intrinsic tree-like topology, while it becomes unstable for non-tree-like data (<i>e.g.</i>, cycle, diffusive).</p>
       <p class="text-center"><img src="/assets/images/theory-comparison.png"></p>
+      <p><i>The analysis of two artificial datasets shows that the structure of MSTs is very robust to noise when the shape of data is tree-like but is not in the cycle-like case (note that longest paths are highlighted for illustrative purposes here).</i></p>
     </div>
     <div class="step">
       <h3>3. Grassmann manifolds of Laplacian eigenseries</h3>
       <p>As the measure of the similarity of global structures between trees, <b>Treefit</b> calculates the eigenseries of the graph Laplacian for each tree, and then computes the distance between the spaces spanned by the leading eigenvectors, which represents the low-frequency components of the graph topology.</p>
-      <p>Several distance measures with different definitions provides diverse information about the topology of the data.</p>
+      <p><b>Treefit</b> supports several distance measures with different definitions in order to help extract diverse information about the topology of the data.</p>
       <p class="text-center"><img src="/assets/images/theory-grassmann.png"></p>
     </div>
   </div>
