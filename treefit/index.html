@@ -22,7 +22,7 @@ layout: base
     <div class="row">
       <div class="col-md-10 offset-md-1 text-center">
         <p>
-          <b>Treefit</b> is a novel data analysis toolkit that helps you perform two types of analysis: 1) checking the goodness-of-fit of tree models to your single-cell gene expression data; and 2) deciding which tree best fits your data. <b>Treefit</b> is implemented in both R and Python languages and can be used in conjunction with other  popular software packages, such as Monocle, Seurat, and dynverse.
+          <b>Treefit</b> is a novel data analysis toolkit that helps you perform two types of quantitative analysis: 1) measuring the goodness-of-fit between your single-cell RNA-seq data and esimated tree trajectories; and 2) discovering novel cell types or detecting contaminating cell types by predicting the number of principal paths in the best-fit tree trajetory. <b>Treefit</b> can be used to analyze either row counts or normalized expresion data. <b>Treefit</b> is implemented in both R and Python languages and can be used in conjunction with other  popular software packages, such as Seurat and dynverse. 
         </p>
       </div>
     </div>
@@ -31,7 +31,7 @@ layout: base
   <div class="container">
     <div class="row">
       <div class="col-md-5 offset-md-1">
-        <h3>1) Ensuring the goodness-of-fit between data and tree models</h3>
+        <h3>1) Measuring the goodness-of-fit between data and data-derived tree trajectories</h3>
         <p>
           Trajectory inference is one of the key computational challenges in single-cell transcriptomics. In the last few years, many software packages have been developed and widely used to extract an underlying "tree" structure from single-cell RNA-seq data.
         </p>
@@ -46,9 +46,12 @@ layout: base
         </div>
       </div>
       <div class="col-md-5">
-        <h3>2) Estimating the number of principal cell linages in your dataset</h3>
+        <h3>2) Estimating the number of "principal paths" in the best-fit tree trajectory</h3>
         <p>
-          Single-cell technologies are expected to help us discover a novel type of cells and revolutionalize our understanding of the process of cell differentiation; however, it is not always easy to distinguish distinct types of cells or to quantify how different their gene expression profiles are. Although visualization is essential in any exploratory data analysis, different methods can result in completely different pictures, making it hard to directly reach a scientific truth solely by this approach. With help of powerful techniques in various disciplines of mathematics, <b>Treefit</b> gives insight into the "shape" of your data (<i>e.g.</i> linear maturation, bifurcation, or more complex divergence) and helps accelerate scientific discoveries in a mathematically and statistically valid way.  
+          Single-cell technologies are expected to help us discover a novel type of cells and revolutionalize our understanding of the process of cell differentiation; however, it is not always easy to distinguish distinct types of cells or to quantify how different their gene expression profiles are. Although visualization is essential in any exploratory data analysis, different methods can result in completely different pictures, making it hard to directly reach a scientific truth solely by this approach.
+        </p>
+        <p>
+          With help of powerful techniques in various disciplines of mathematics, <b>Treefit</b> gives insight into the "shape" of your data (<i>e.g.</i> linear maturation, bifurcation, or more complex divergence) and helps accelerate scientific discoveries in a mathematically and statistically valid way.
         </p>
         <div class="abstract-figure-container">
           <img src="/assets/images/abstract-right.png" class="abstract-figure">
@@ -61,7 +64,7 @@ layout: base
 <section id="section-theory" class="bg-light">
   <div class="container">
     <h2>Theoretical ideas</h2>
-    <p>One of the fundamental beliefs in biology is that the process of cell differentiation can be modeled by a "tree" (<i>i.e.</i>, connected graph without a cycle). However, it depends on the situation whether or not this assumption is valid. Indeed, some data are too noisy to be exactly depicted by a tree and some cells are known to undergo dedifferentiation that is not a tree-like but cycle-like process. <b>Treefit</b> verifies how well your data can be explained by a tree model and thus helps you perform quantitative trajectory inference.</p>
+    <p>One of the fundamental beliefs in cell biology is that the process of cell differentiation can be modeled by a "tree" (<i>i.e.</i>, connected graph without a cycle). However, it depends on the situation whether or not this assumption is valid. Indeed, some data are too noisy to be exactly depicted by a tree and some cells are known to undergo dedifferentiation that is not a tree-like but cycle-like process. <b>Treefit</b> verifies how well your data can be explained by a tree model and thus helps you perform quantitative trajectory inference.</p>
     <div class="step">
       <h3>1. Data perturbation</h3>
       <p>In mathematics, perturbation refers to the operation of adding a slight shift to a number, and in our context, it means adding small noise to the values of original gene expression signals. If you input a gene expression data matrix, then <b>Treefit</b> repeatedly perturbs the original data so that you can obtain many possible datasets without actually doing the same experiments over and over again.  
