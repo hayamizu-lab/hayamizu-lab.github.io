@@ -78,7 +78,7 @@ layout: base
       <h3>2. Measuring the robustness of inferred tree trajectories</h3>
       <p>Once creating many datasets by simulating different kinds of noise, we can build many possible trees by applying any tree trajectory inference method to each gene expression data matrix. <b>Treefit</b> calculates a tree for each realized expression matrix, then compares their <i>global structures</i> using geometrical methods. The current version of <b>Treefit</b> computes a minimum spanning tree (MST) because many existing trajectory inference software packages uses MSTs.</p>
       <p class="text-center"><img src="/assets/images/theory-msts.png"></p>
-      <p><b>Treefit</b> analyzes the goodness-of-fit between data and data-derived tree models by measuring the structural similarity between many inferred tree trajectories. In principle, the structure is stable when data have an intrinsic tree-like topology, while it becomes unstable for non-tree-like data (<i>e.g.</i>, cycle, diffusive).</p>
+      <p><b>Treefit</b> analyzes the goodness-of-fit between data and data-derived tree models by measuring the structural similarity between many inferred tree trajectories. In principle, the tree structure is stable when data have an intrinsic tree-like topology, while it becomes unstable for non-tree-like data (<i>e.g.</i>, cycle, diffusive).</p>
       <p class="text-center"><img src="/assets/images/theory-comparison.png"></p>
       <p><i>The analysis of two artificial datasets shows that the structure of MSTs is robust to noise when the shape of data is tree-like but is not in the cycle-like case (note that longest paths are highlighted for illustrative purposes here).</i></p>
     </div>
