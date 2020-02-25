@@ -1,5 +1,7 @@
 title: Hayamizu lab
 description: "Hayamizu lab: Treefit"
+treefit_r_version: 1.0.0
+
 markdown: kramdown
 highlighter: rouge
 exclude:
@@ -8,7 +10,6 @@ exclude:
   - "Gemfile.lock"
   - "Rakefile"
   - "vendor"
-
 kramdown:
   input: GFM
   smart_quotes: ["apos", "apos", "quot", "quot"]
